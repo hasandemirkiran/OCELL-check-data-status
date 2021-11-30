@@ -1,0 +1,196 @@
+{
+    "Fugger": {
+        "Wellenburg": {
+            "general_areas": "general_areas__Wellenburg__v5.geojson",
+            "tree_type_infos": "tree_type_infos__Wellenburg__v5.geojson",
+            "plot_areas": "plot_areas_transformed__Wellenburg__v1.geojson",
+            "roads": "",
+            "offline_regions": "",
+            "hunting_districts": "",
+            "site_map": "site_map__Wellenburg__v1.geojson"
+        },
+        "Babenhausen": {
+            "general_areas": "",
+            "tree_type_infos": "",
+            "plot_areas": "plot_areas_transformed__Babenhausen__v1.geojson",
+            "roads": "",
+            "offline_regions": "",
+            "hunting_districts": "",
+            "site_map": "site_map__Babenhausen__v1.geojson"
+        },
+        "MarktWald": {
+            "general_areas": "",
+            "tree_type_infos": "",
+            "plot_areas": "plot_areas_transformed__MarktWald__v1.geojson",
+            "roads": "",
+            "offline_regions": "",
+            "hunting_districts": "",
+            "site_map": "site_map__MarktWald__v1.geojson"
+        }
+    },
+    "ToeringJettenbach": {
+        "Mischenried": {
+            "general_areas": "general_areas__Mischenried__v1.geojson",
+            "tree_type_infos": "tree_type_infos__Mischenried__v1.geojson",
+            "plot_areas": "plot_areas_transformed__Mischenried__v2.geojson",
+            "roads": "",
+            "offline_regions": "offline_regions__Mischenried__v1.geojson",
+            "hunting_districts": "",
+            "site_map": "site_map__Mischenried__v1.geojson"
+        },
+        "Poernbach": {
+            "general_areas": "general_areas__Poernbach__v2.geojson",
+            "tree_type_infos": "tree_type_infos__Poernbach__v2.geojson",
+            "plot_areas": "plot_areas_transformed__Poernbach__v2.geojson",
+            "roads": "",
+            "offline_regions": "offline_regions__Poernbach__v1.geojson",
+            "hunting_districts": "hunting_districts__Poernbach__v1.geojson",
+            "site_map": ""
+        },
+        "Duenzelbach": {
+            "general_areas": "general_areas__Duenzelbach__v2.geojson",
+            "tree_type_infos": "tree_type_infos__Duenzelbach__v2.geojson",
+            "plot_areas": "plot_areas_transformed__Duenzelbach__v3.geojson",
+            "roads": "",
+            "offline_regions": "",
+            "hunting_districts": "hunting_districts__Duenzelbach__v1.geojson",
+            "site_map": "site_map__Duenzelbach__v1.geojson"
+        },
+        "Winhoering": {
+            "general_areas": "general_areas__Winhoering__v2.geojson",
+            "tree_type_infos": "tree_type_infos__Winhoering__v2.geojson",
+            "plot_areas": "plot_areas_transformed__Winhoering__v2.geojson",
+            "roads": "",
+            "offline_regions": "offline_regions__Winhoering__v1.geojson",
+            "hunting_districts": "hunting_districts__Winhoering__v1.geojson",
+            "site_map": "site_map__Winhoering__v1.geojson"
+        },
+        "Seefeld": {
+            "general_areas": "general_areas__Seefeld__v1.geojson",
+            "tree_type_infos": "tree_type_infos__Seefeld__v1.geojson",
+            "plot_areas": "plot_areas_transformed__Seefeld__v3.geojson",
+            "roads": "",
+            "offline_regions": "offline_regions__Seefeld__v1.geojson",
+            "hunting_districts": "hunting_districts__Seefeld__v1.geojson",
+            "site_map": "site_map__Seefeld__v1.geojson"
+        },
+        "Inning": {
+            "general_areas": "general_areas__Inning__v2.geojson",
+            "tree_type_infos": "tree_type_infos__Inning__v2.geojson",
+            "plot_areas": "plot_areas_transformed__Inning__v3.geojson",
+            "roads": "",
+            "offline_regions": "",
+            "hunting_districts": "",
+            "site_map": ""
+        },
+        "Gutenzell": {
+            "general_areas": "general_areas__Gutenzell__v2.geojson",
+            "tree_type_infos": "tree_type_infos__Gutenzell__v2.geojson",
+            "plot_areas": "plot_areas_transformed__Gutenzell__v2.geojson",
+            "roads": "",
+            "offline_regions": "",
+            "hunting_districts": "hunting_districts__Gutenzell__v1.geojson",
+            "site_map": ""
+        },
+        "Jettenbach": {
+            "general_areas": "general_areas__Jettenbach__v2.geojson",
+            "tree_type_infos": "tree_type_infos__Jettenbach__v2.geojson",
+            "plot_areas": "plot_areas_transformed__Jettenbach__v2.geojson",
+            "roads": "",
+            "offline_regions": "offline_regions__Jettenbach__v1.geojson",
+            "hunting_districts": "hunting_districts__Jettenbach__v1.geojson",
+            "site_map": "site_map__Jettenbach__v1.geojson"
+        }
+    },
+    "CenterForst": {
+        "Weide": {
+            "general_areas": "merged_general_areas__Weide__v1__tree_type_same.geojson",
+            "tree_type_infos": "merged_tree_type_infos__Weide__v1.geojson",
+            "plot_areas": "plot_areas_transformed__Weide__v1.geojson",
+            "roads": "",
+            "offline_regions": "offline_regions__Weide__v1.geojson",
+            "hunting_districts": "",
+            "site_map": ""
+        },
+        "Immergruen": {
+            "general_areas": "merged_general_areas__Immergruen__v1__tree_type_same.geojson",
+            "tree_type_infos": "merged_tree_type_infos__Immergruen__v1.geojson",
+            "plot_areas": "plot_areas_transformed__Immergruen__v1.geojson",
+            "roads": "",
+            "offline_regions": "offline_regions__Immergruen__v1.geojson",
+            "hunting_districts": "",
+            "site_map": ""
+        },
+        "Baumbach": {
+            "general_areas": "merged_general_areas__Baumbach__v3.geojson",
+            "tree_type_infos": "merged_tree_type_infos__Baumbach__v3.geojson",
+            "plot_areas": "plot_areas_transformed__Baumbach__v1.geojson",
+            "roads": "",
+            "offline_regions": "offline_regions__Baumbach__v1.geojson",
+            "hunting_districts": "",
+            "site_map": ""
+        }
+    },
+    "GrafSpreti": {
+        "Lotzbeck": {
+            "general_areas": "general_areas__Lotzbeck__v2.geojson",
+            "tree_type_infos": "tree_type_infos__Lotzbeck__v2.geojson",
+            "plot_areas": "plot_areas_transformed__Lotzbeck__v2.geojson",
+            "roads": "",
+            "offline_regions": "offline_regions__Lotzbeck__v1.geojson",
+            "hunting_districts": "",
+            "site_map": ""
+        }
+    },
+    "BoscorGroup": {
+        "Reitzenstein": {
+            "general_areas": "general_areas__Reitzenstein__v1.geojson",
+            "tree_type_infos": "tree_type_infos__Reitzenstein__v1.geojson",
+            "plot_areas": "plot_areas_transformed__Reitzenstein__v1.geojson",
+            "roads": "",
+            "offline_regions": "offline_regions__Reitzenstein__v1.geojson",
+            "hunting_districts": "",
+            "site_map": ""
+        },
+        "Rentweinsdorf": {
+            "general_areas": "general_areas__Rentweinsdorf__v1.geojson",
+            "tree_type_infos": "",
+            "plot_areas": "plot_areas_transformed__Rentweinsdorf__v1.geojson",
+            "roads": "",
+            "offline_regions": "offline_regions__Rentweinsdorf__v1.geojson",
+            "hunting_districts": "hunting_districts__Rentweinsdorf__v1.geojson",
+            "site_map": ""
+        },
+        "Loewenstein": {
+            "general_areas": "general_areas__Loewenstein__v2.geojson",
+            "tree_type_infos": "tree_type_infos__Loewenstein__v2.geojson",
+            "plot_areas": "",
+            "roads": "",
+            "offline_regions": "offline_regions__Loewenstein__v1.geojson",
+            "hunting_districts": "hunting_districts__Loewenstein__v1.geojson",
+            "site_map": ""
+        }
+    },
+    "Wallerstein": {
+        "Dist_12_13": {
+            "general_areas": "general_areas__Dist_12_13__v5.geojson",
+            "tree_type_infos": "tree_type_infos__Dist_12_13__v5.geojson",
+            "plot_areas": "",
+            "roads": "",
+            "offline_regions": "offline_regions__Dist_12_13.geojson",
+            "hunting_districts": "",
+            "site_map": ""
+        }
+    },
+    "Blauwald": {
+        "Duttenstein": {
+            "general_areas": "general_areas__Duttenstein__v4.geojson",
+            "tree_type_infos": "tree_type_infos__Duttenstein__v4.geojson",
+            "plot_areas": "",
+            "roads": "",
+            "offline_regions": "offline_regions__Duttenstein.geojson",
+            "hunting_districts": "",
+            "site_map": ""
+        }
+    }
+}
