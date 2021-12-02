@@ -11,11 +11,12 @@ CUSTOMER_REGION = {
     'Wallerstein': ['Dist_12_13'],
     'GrafSpreti': ['Lotzbeck'],
     'Boscor': ['Loewenstein', 'Reitzenstein', 'Rentweinsdorf'],
-    'VonPfuel': ['Tüssling']
+    'VonPfuel': ['Tüssling'],
+    'LucasVonFuerstenberg': ['Brabecke', 'Ruespe']
 }
 
 REGIONS = ['Duttenstein', 'Baumbach', 'Immergruen', 'Weide', 'Wellenburg', 'Babenhausen', 'MarktWald', 'Muenzenberg', 'Fienerode', 'Breitenbach', 'Gutenzell', 'Dünzelbach',
-           'Inning', 'Jettenbach', 'Mischenried', 'Poernbach', 'Seefeld', 'Winhoering', 'Dist_12_13', 'Lotzbeck', 'Loewenstein', 'Reitzenstein', 'Rentweinsdorf', 'Tuessling']
+           'Inning', 'Jettenbach', 'Mischenried', 'Poernbach', 'Seefeld', 'Winhoering', 'Dist_12_13', 'Lotzbeck', 'Loewenstein', 'Reitzenstein', 'Rentweinsdorf', 'Tuessling', 'Brabecke', 'Ruespe']
 
 
 def find_URLs(start_path):
@@ -40,89 +41,58 @@ def find_URLs(start_path):
             customer_region_files_dict[customer][region] = files_types
 
             for f in files:
+                file_type = ''
                 if 'general_areas' in f and f.endswith(".geojson"):
-                    general_areas = customer_region_files_dict[customer][region]['general_areas']
-                    if general_areas == '':
-                        customer_region_files_dict[customer][region]['general_areas'] = root + '/' + str(f)
-                    else:
-                        new_version = f.split('.')[0][-1]
-                        old_version = general_areas.split('.')[0][-1]
-                        if new_version.isdigit():
-                            if new_version > old_version:
-                                customer_region_files_dict[customer][region]['general_areas'] = root + '/' + str(f)
-
+                    file_type = 'general_areas'
+                    
                 elif 'tree_type_infos' in f and f.endswith(".geojson"):
-                    tree_type_infos = customer_region_files_dict[customer][region]['tree_type_infos']
-                    if tree_type_infos == '':
-                        customer_region_files_dict[customer][region]['tree_type_infos'] = root + '/' + str(f)
-                    else:
-                        new_version = f.split('.')[0][-1]
-                        old_version = tree_type_infos.split('.')[0][-1]
-                        if new_version.isdigit():
-                            if new_version > old_version:
-                                customer_region_files_dict[customer][region]['tree_type_infos'] = root + '/' + str(f)
+                    file_type = 'tree_type_infos'
 
                 elif 'plot_areas' in f and f.endswith(".geojson"):
-                    plot_areas = customer_region_files_dict[customer][region]['plot_areas']
-                    if plot_areas == '':
-                        customer_region_files_dict[customer][region]['plot_areas'] = root + '/' + str(f)
-                    else:
-                        new_version = f.split('.')[0][-1]
-                        old_version = plot_areas.split('.')[0][-1]
-                        if new_version.isdigit():
-                            if new_version > old_version:
-                                customer_region_files_dict[customer][region]['plot_areas'] = root + '/' + str(f)
+                    file_type = 'plot_areas'
 
                 elif 'roads' in f and f.endswith(".geojson"):
-                    roads = customer_region_files_dict[customer][region]['roads']
-                    if roads == '':
-                        customer_region_files_dict[customer][region]['roads'] = root + '/' + str(f)
-                    else:
-                        new_version = f.split('.')[0][-1]
-                        old_version = roads.split('.')[0][-1]
-                        if new_version.isdigit():
-                            if new_version > old_version:
-                                customer_region_files_dict[customer][region]['roads'] = root + '/' + str(f)
+                    file_type = 'roads'
 
                 elif 'offline_regions' in f and f.endswith(".geojson"):
-                    offline_regions = customer_region_files_dict[customer][region]['offline_regions']
-                    if offline_regions == '':
-                        customer_region_files_dict[customer][region]['offline_regions'] = root + '/' + str(f)
-                    else:
-                        new_version = f.split('.')[0][-1]
-                        old_version = offline_regions.split('.')[0][-1]
-                        if new_version.isdigit():
-                            if new_version > old_version:
-                                customer_region_files_dict[customer][region]['offline_regions'] = root + '/' + str(f)
+                    file_type = 'offline_regions'
 
                 elif 'hunting_districts' in f and f.endswith(".geojson"):
-                    hunting_districts = customer_region_files_dict[customer][region]['hunting_districts']
-                    if hunting_districts == '':
-                        customer_region_files_dict[customer][region]['hunting_districts'] = root + '/' + str(f)
-                    else:
-                        new_version = f.split('.')[0][-1]
-                        old_version = hunting_districts.split('.')[0][-1]
-                        if new_version.isdigit():
-                            if new_version > old_version:
-                                customer_region_files_dict[customer][region]['hunting_districts'] = root + '/' + str(f)                  
-
-
+                    file_type = 'hunting_districts'
+                 
                 elif 'site_map' in f and f.endswith(".geojson"):
-                    site_map = customer_region_files_dict[customer][region]['site_map']
-                    if site_map == '':
-                        customer_region_files_dict[customer][region]['site_map'] = root + '/' + str(f)
+                    file_type = 'site_map'
+  
+                if file_type != '':
+                    current_entry = customer_region_files_dict[customer][region][file_type]
+                    if current_entry == '':
+                        customer_region_files_dict[customer][region][file_type] = root + '/' + str(f)
                     else:
-                        new_version = f.split('.')[0][-1]
-                        old_version = site_map.split('.')[0][-1]
-                        if new_version.isdigit():
-                            if new_version > old_version:
-                                customer_region_files_dict[customer][region]['site_map'] = root + '/' + str(f)                              
+                        new_version_1 = f.split('.')[0][-1]
+                        new_version_2 = f.split('.')[0][-2:]
+                        old_version_1 = current_entry.split('.')[0][-1]
+                        old_version_2 = current_entry.split('.')[0][-2:]
+
+                        if new_version_2.isdigit():
+                            if old_version_2.isdigit():
+                                if int(new_version_2) > int(old_version_2):
+                                    customer_region_files_dict[customer][region][file_type] = root + '/' + str(f)
+                            elif old_version_1.isdigit():
+                                if int(new_version_2) > int(old_version_1):
+                                    customer_region_files_dict[customer][region][file_type] = root + '/' + str(f)  
+                        elif new_version_1.isdigit():
+                            if old_version_2.isdigit():
+                                if int(new_version_1) > int(old_version_2):
+                                    customer_region_files_dict[customer][region][file_type] = root + '/' + str(f)
+                            elif old_version_1.isdigit():
+                                if int(new_version_1) > int(old_version_1):
+                                    customer_region_files_dict[customer][region][file_type] = root + '/' + str(f) 
 
     return customer_region_files_dict
 
 
 if __name__ == '__main__':
-    start_path = '/Volumes/gis_data/customers/'
+    start_path = '/mnt/nas/gis_data/customers'
     customer_region_files_dict = find_URLs(start_path)
 
     with open('files.json', 'w') as fp:
