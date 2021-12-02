@@ -2,21 +2,31 @@ import geojson
 import json
 import pprint
 
+
 def check_general_areas(file):
 
     file_name = file.split('/')[-1]
 
+    nutzungsart = ['Blöße',
+                   'Jungbestandspflege (JP)',
+                   'Jungdurchforstung (JD)',
+                   'Altdurchforstung (AD)',
+                   'Verjüngungsnutzung (VJ)',
+                   'Gesicherte Vorausverjüngung (VJ)',
+                   'Langfristige Behandlung (LB)']
+
     result = {
-        'number_of_features' :  0,
-        'lack_Flächen_ID' : 0,
+        'number_of_features':  0,
+        'lack_Flächen_ID': 0,
         'lack_Abteilung': 0,
         'lack_Nutzungsart': 0,
+        'wrong_Nutzungsart': 0,
         'lack_Hauptbaumart': 0,
         'lack_Altersklasse': 0,
         'lack_Oberhöhe': 0,
         'lack_Ist-Vorrat': 0,
         'lack_Mittelhöhe': 0,
-        'lack_Bestockte_Fläche': 0
+        'lack_Bestockte_Fläche': 0,
     }
 
     with open(file) as f:
@@ -33,30 +43,32 @@ def check_general_areas(file):
             result['lack_Abteilung'] += 1
         if 'Nutzungsart' not in properties:
             result['lack_Nutzungsart'] += 1
-        if 'Nuntzungsart' in properties:
-            if properties['Nutzungsart'] != "Blöße":
+        if 'Nutzungsart' in properties and 'Flächentyp' not in properties:
+            if properties['Nutzungsart'] != "Blöße" :
+                if properties['Nutzungsart'] not in nutzungsart:
+                    result['wrong_Nutzungsart'] += 1
                 if 'Hauptbaumart' not in properties:
                     result['lack_Hauptbaumart'] += 1
                 if 'Altersklasse' not in properties:
-                    result['lack_Altersklasse']+= 1
+                    result['lack_Altersklasse'] += 1
                 if 'Oberhöhe' not in properties:
                     result['lack_Oberhöhe'] += 1
                 if 'Ist-Vorrat' not in properties:
                     result['lack_Ist-Vorrat'] += 1
                 if 'Mittelhöhe`' not in properties:
-                    result['lack_Mittelhöhe']+= 1
+                    result['lack_Mittelhöhe'] += 1
                 if '`Bestockte_Fläche`' not in properties:
                     result['lack_Bestockte_Fläche'] += 1
 
-
     return file_name, result
+
 
 def check_tree_type_infos(file):
     file_name = file.split('/')[-1]
 
     result = {
-        'number_of_features' :  0,
-        'Baumart' : 0,
+        'number_of_features':  0,
+        'Baumart': 0,
         'Bestandesschicht': 0,
         'Alter': 0,
         'Vorratsanteil': 0,
@@ -89,14 +101,15 @@ def check_tree_type_infos(file):
             result['Zuwachs'] += 1
 
     return file_name, result
-    
+
+
 def check_plot_areas(file):
     file_name = file.split('/')[-1]
 
     result = {
-        'number_of_features' :  0,
-        'Gemarkungsnummer' :  0,
-        'Eigentümer' : 0,
+        'number_of_features':  0,
+        'Gemarkungsnummer':  0,
+        'Eigentümer': 0,
         'Gemarkung': 0,
         'Flurstücknummer': 0,
         'Zuordnung': 0,
@@ -123,6 +136,7 @@ def check_plot_areas(file):
 
     return file_name, result
 
+
 def check_offline_region(file):
     return
 
@@ -134,7 +148,6 @@ if __name__ == '__main__':
 
     for customer in data:
         for region in data[customer]:
-            if data[customer][region]['offline_region'] != '':
-                offline_region = data[customer][region]['offline_region']
-                print(check_offline_region(offline_region))
-
+            if data[customer][region]['tree_type_infos'] != '':
+                tree_type_infos = data[customer][region]['tree_type_infos']
+                print(check_tree_type_infos(tree_type_infos))
